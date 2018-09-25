@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install -y cron
 RUN apt-get install -y nano
 ## swaks for sending emails
-RUN apt-get install -y swaks
+# RUN apt-get install -y swaks
 
 # install R packages
 RUN Rscript -e 'install.packages("flexdashboard")'
