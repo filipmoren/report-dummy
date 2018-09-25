@@ -21,6 +21,7 @@ with any suggestions or questions.
    -e "DB_USERNAME=username" \
    -e "DB_PASSWORD=password" \
    -e "DB_NAME=dbName" \
+   -e "TESTING=TRUE" \
    -e "CRON_SCHEDULE=1 6 * * 1 root /projFiles/r.sh >> /var/log/r.log 2>&1" \
    dummy-report:dev
    ```
@@ -62,6 +63,7 @@ To start the prod container run
    -e "DB_USERNAME=username" \
    -e "DB_PASSWORD=password" \
    -e "DB_NAME=dbName" \
+   -e "TESTING=TRUE" \
    -e "CRON_SCHEDULE=1 6 * * 1 root /projFiles/r.sh >> /var/log/r.log 2>&1" \
    dummy-report:prod
 
