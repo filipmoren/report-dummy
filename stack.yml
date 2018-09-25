@@ -1,6 +1,6 @@
 version: '3.2'
 services:
-  bm-weekly:
+  ex-report:
       image: ex-report:latest 
       networks:
         - binet
