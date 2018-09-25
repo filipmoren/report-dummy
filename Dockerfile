@@ -20,6 +20,7 @@ RUN Rscript -e "devtools::install_github('tidyverse/ggplot2', ref = 'v3.0.0')"
 RUN mkdir projFiles
 
 # add files
+# uncomment the section below to add files when building the image
 # ADD ./init.sh /projFiles/init.sh
 # ADD ./r.sh /projFiles/r.sh
 # RUN chmod u+x /projFiles/r.sh
@@ -28,7 +29,7 @@ RUN mkdir projFiles
 
 CMD ["/projFiles/init.sh"]
 
-# start with rstudio server and wd mounted
+# command to start container with rstudio server and wd mounted
 
 # docker run -d -p 8787:8787 -v $(pwd):/projFiles \
 # -e "DB_SERVER=host" \
