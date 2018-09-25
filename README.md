@@ -79,7 +79,7 @@ run when my cron schedule said that they were suppose to run. To fix this, we
 added two files, /init.sh and /r.sh
 
 ### /init.sh
-When the container starts, the script init.sh will run. This scripts does four 
+When the container starts, the script init.sh will run. This script does four 
 important things.
 
 1. Export  the environment variable to /etc/cron.d/cronSchedule and change the permissions of the 
