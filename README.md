@@ -1,5 +1,8 @@
 # report-dummy
-A rough dummy of my regular workflow
+This is a rough dummy of my regular workflow. Some of the scripts are
+not sourced at all since theres no access to a database etc., but they 
+are left here to show how I usually do things. Please leave me a comment
+with any suggestions or questions.
 
 ## Instructions
 
@@ -77,7 +80,28 @@ run when my cron schedule said that they were suppose to run. To fix this, we
 added two files, /init.sh and /r.sh
 
 ### /init.sh
+When the container starts, the script init.sh will run. This scripts does four 
+important things.
 
+1. Export  the environment variable to /etc/cron.d/cronSchedule and change the permissions of the 
+   file.
+2. It starts cron.
+3. It writes all environment variables to the file /vars. This is an important
+   part of /r.sh.
+4. It starts loging the output from R to /var/log/r.log
 
+### /r.sh
+The cron schedule, wich is defined as an environment variable, looks like so:
+
+```
+1 6 * * 1 root /projFiles/r.sh >> /var/log/r.log 2>&1
+```
+
+So, cron runs r.sh and writes the output to the log. However, the script that
+cron runs cannot access the environment variables we defined when we started 
+the container. So, the first thing r.sh does is to export all our environment
+variables from /vars (which was created by /init.sh). That way, when r.sh 
+finally executes `cd projFiles && Rscript scripts/R/master.R`, our script has 
+access to all environment variables we need.
 
 
