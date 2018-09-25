@@ -1,0 +1,57 @@
+---
+title: "report `r paste0(' -- ', department)`"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    orientation: rows
+    vertical_layout: fill
+    css: styles.css
+    # in_header: bmHeader.html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+# default blue and orange
+pfOrange <- "#FB4408"
+pfBlue <- "#1C2443"
+
+# Colours for the grades
+red <- "#E63434"
+green <- "#4AD964"
+yellow <- "#F0C44F"
+
+```
+
+```{r filterDepotData, eval=FALSE}
+# filter out data for report department
+# tablesToFetch is defined in getDataFromClone.R. We loop over all tables, 
+# filter out the current department and asign the data as tablexDat.
+# we dont run this chunk here since we use example data instead
+for(i in tablesToFetch) {
+  assign(paste0(i, "Dat"), 
+         get(paste0(i, "DatAll")) %>% 
+  filter(grepl(department, store)))
+  }
+
+```
+
+```{r summary, child='children/summaryChild.Rmd'}
+
+```
+
+
+```{r drilldown, child='children/drilldownChild.Rmd'}
+
+```
+
+
+
+
+
+
+
+
+
+
+

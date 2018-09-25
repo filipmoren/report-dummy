@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  bm-weekly:
+      image: ex-report:latest 
+      networks:
+        - binet
+      ports:
+        - 8787:8787
+      environment:
+       - DB_SERVER=dbserver.com
+       - DB_USERNAME=username
+       - DB_PASSWORD=password
+       - DB_NAME=dbName
+       - TESTING=TRUE
+       - CRON_SCHEDULE=1 6 * * 1 root /projFiles/r.sh >> /var/log/r.log 2>&1
+    # uncomment if you want to mount a dir
+    # volumes:
+    #   - /path/to/reportTemplate:/projFiles
+
+networks:
+  binet:
+    driver: overlay
+    attachable: true

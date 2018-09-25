@@ -1,0 +1,5 @@
+shortName,department,main,cc
+customer1,dep1,hello@yahoo.com;ex@gmail.com,sendMeOne@tenminuteemail.com
+customer1,dep2,hello@yahoo.com;ex@gmail.com,sendMeOne@tenminuteemail.com
+customer2,dep1,hello@yahoo.com;ex@gmail.com,sendMeOne@tenminuteemail.com
+customer2,dep2,hello@yahoo.com;ex@gmail.com,sendMeOne@tenminuteemail.com

@@ -1,0 +1,57 @@
+.vr {
+    width:10px;
+    background-color:#EDEDED;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:2px;
+}
+
+.value-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  margin-top: 5;
+}
+
+.navbar-logo img {
+  margin-right: 12px;
+  height: 40px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

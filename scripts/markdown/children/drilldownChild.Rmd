@@ -1,0 +1,36 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# tab2
+
+Row1 {data-height=500}
+--------------------------------
+
+###
+```{r}
+data("iris")
+iris %>% 
+  group_by(Species) %>% 
+  summarise(Petal.Length = mean(Petal.Length)) %>% 
+  ggplot(aes(x = Species, y = Petal.Length)) + 
+  geom_bar(stat = "identity") -> p
+
+ggplotly(p)
+
+```
+
+tables {data-height=400}
+--------------------------------
+
+###
+
+```{r}
+datatable(iris)
+```
+
+
+
+
