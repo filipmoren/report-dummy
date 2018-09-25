@@ -1,6 +1,6 @@
 # report-dummy
 This is a rough dummy of my regular workflow. Some of the scripts are
-not sourced at all since theres no access to a database etc., but they 
+not sourced at all since there's no access to a database etc., but they 
 are left here to show how I usually do things. Please leave me a comment
 with any suggestions or questions.
 
@@ -14,7 +14,6 @@ with any suggestions or questions.
    docker build -t dummy-report:dev .
    ```
    The above code will build the docker image and tag it with the name dummy-report:dev.
-   I use the tag :dev.
 4. Start the docker container
    ```
    docker run -d -p 8787:8787 -v $(pwd):/projFiles \
@@ -41,7 +40,7 @@ with any suggestions or questions.
    ```
    Connect to localhost:8787 in your browser to access RStudio server.
    Username and password are both rstudio. The content of $pwd are under /projFiles.
-   since we mounted a volume in step 4, these are the same files as on your computer
+   Since we mounted a volume in step 4, these are the same files as on your computer
    and any changes will be written to your copy.
 6. Generate a dummy report by running the code in `projFiles/scripts/R/master.R`
    The reports will end up in /projFiles/output/
@@ -67,7 +66,7 @@ To start the prod container run
    dummy-report:prod
 
 ``` 
-Notice how we did not mount the curremt wd to the container, the image now
+Notice how we did not mount the current wd to the container, the image now
 containes the files needed. Note also how we changed the port mapping, from
 8787 to 8788. If we have both :dev and :prod running at the same time, we
 cannot use the same ports.
@@ -104,4 +103,5 @@ variables from /vars (which was created by /init.sh). That way, when r.sh
 finally executes `cd projFiles && Rscript scripts/R/master.R`, our script has 
 access to all environment variables we need.
 
-
+### stack.yml
+YML to start a stack of containers on a server, more info to come.
