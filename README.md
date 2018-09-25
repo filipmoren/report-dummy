@@ -2,7 +2,8 @@
 This is a rough dummy of my regular workflow. Some of the scripts are
 not sourced at all since there's no access to a database etc., but they 
 are left here to show how I usually do things. Please leave me a comment
-with any suggestions or questions.
+with any suggestions or questions. These instructions work in ubuntu and macOS, 
+but the commands on windows should be fairly similar.
 
 ## Instructions
 
