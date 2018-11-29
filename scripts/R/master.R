@@ -1,4 +1,3 @@
-rm(list = ls()); gc()
 # Load packages ----
 pkg <- c("flexdashboard", "tidyverse", "lubridate", "plotly", "scales", "XML", "crosstalk",
          "forcats", "DT", "shiny", "stringr", "rmarkdown", "httr", "feather", "stringr", 
